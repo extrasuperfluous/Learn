@@ -1,0 +1,20 @@
+set number
+syntax on
+set background=dark
+set cursorline
+set scrolloff=3 
+set foldenable
+set autoread
+set showmatch   
+set ignorecase
+set smartcase 
+set incsearch
+set hidden
+set tabstop=2
+set hlsearch
+set clipboard=unnamed 
+set autoindent
+set showcmd
+set confirm
+set report=0
+
