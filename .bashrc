@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias git-log='git log --oneline --all --graph --decorate --abbrev-commit'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -115,3 +116,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+function git_branch {
+  branch="`git branch 2>/dev/null | grep "^\*" | sed -e "s/^\*\ //"`"
+  if [ "${branch}" != "" ];then
+    if [ "${branch}" = "(no branch)" ];then
+      branch="(`git rev-parse --short HEAD`...)"
+    fi
+    echo " → $branch"
+  fi
+}
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(git_branch)\[\033[00m\]\n\$'
