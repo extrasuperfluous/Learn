@@ -126,3 +126,5 @@ function git_branch {
   fi
 }
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(git_branch)\[\033[00m\]\n\$'
+export NEMU_HOME=/home/uncle/ysyx/ysyx-workbench/nemu
+export AM_HOME=/home/uncle/ysyx/ysyx-workbench/abstract-machine
